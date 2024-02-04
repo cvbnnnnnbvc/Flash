@@ -13,10 +13,26 @@
             justify-content: center;
             align-items: center;
             background-color: rgb(54, 54, 54);
+            flex-direction: column;
         }
 
         #container {
             text-align: center;
+        }
+
+        .rotate90 {
+            transform: rotate(90deg);
+        }
+
+        button {
+            margin-top: 15px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgb(255, 170, 0);
+            color: #6938b7;
+            font-weight: bold;
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle"></script>
@@ -29,11 +45,25 @@
             container.appendChild(player);
             player.load("s3.swf");
         });
+
+        // 翻转SWF文件的函数
+        function rotateSWF() {
+            const container = document.getElementById("container");
+            const button = document.querySelector("button");
+
+            container.classList.toggle("rotate90");
+            button.classList.toggle("rotate90");
+
+            // 根据按钮的翻转状态设置按钮文本
+            const buttonText = container.classList.contains("rotate90") ? "还原" : "选择手机版";
+            button.textContent = buttonText;
+        }
     </script>
 </head>
 
 <body style="height: 100%;">
-    <div id="container"> </div>
+    <button onclick="rotateSWF()">选择手机版</button>
+    <div id="container"></div>
 </body>
 
 </html>
