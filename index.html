@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+ 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ruffle</title>
+    <script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle"></script>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("container");
+            container.appendChild(player);
+            player.load("s3.swf");
+        });
+    </script>
+</head>
+ 
+<body style="height: 100%; margin: 0">
+    <div id="container" style="height: 100%"> </div>
+</body>
+ 
+</html>
