@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html style="height: 100%">
- 
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ruffle</title>
+    <title>Flash</title>
     <script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle"></script>
+    <style>
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(67, 67, 67);
+        }
+
+        #container {
+            width: 500px;
+            height: 100%;
+            margin-top: 100px; 
+        }
+    </style>
     <script>
         window.RufflePlayer = window.RufflePlayer || {};
         window.addEventListener("load", (event) => {
@@ -17,9 +33,9 @@
         });
     </script>
 </head>
- 
-<body style="height: 100%; margin: 0">
-    <div id="container" style="height: 100%"> </div>
+
+<body>
+    <div id="container"></div>
 </body>
- 
+
 </html>
