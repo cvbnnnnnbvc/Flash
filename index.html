@@ -55,14 +55,14 @@
             button.classList.toggle("rotate90");
 
             // 根据按钮的翻转状态设置按钮文本
-            const buttonText = container.classList.contains("rotate90") ? "还原" : "选择手机版";
+            const buttonText = container.classList.contains("rotate90") ? "还原" : "选择横屏布局";
             button.textContent = buttonText;
         }
     </script>
 </head>
 
 <body style="height: 100%;">
-    <button onclick="rotateSWF()">选择手机版</button>
+    <button onclick="rotateSWF()">选择横屏布局</button>
     <div id="container"></div>
 </body>
 
